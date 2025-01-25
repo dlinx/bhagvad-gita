@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import gitaData from './data/gita.json';
+import gitaData from './data/gita';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import {
@@ -9,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { AccordionHeader } from '@radix-ui/react-accordion';
 
 export const metadata: Metadata = {
   title: 'Bhagavad Gita | Verses',
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const { verses } = gitaData;
-  const verseList = useMemo(() => Object.keys(verses), verses);
+  const verseList = useMemo(() => Object.keys(verses), [verses]);
   return (
     <main className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
       <div className="max-w-5xl mx-auto px-4 py-16">

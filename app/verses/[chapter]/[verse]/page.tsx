@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import Link from 'next/link';
-import gitaData from '../../../data/gita.json';
+import gitaData from '../../../data/gita';
 
 interface Props {
   params: { chapter: string; verse: string };
@@ -59,11 +59,11 @@ export default function VersePage({ params }: Props) {
 
   const verse = gitaData.verses[params.chapter][currentVerseIndex];
   const prevVerse =
-    currentVerseIndex > 0
+    currentVerseIndex > 1
       ? gitaData.verses[params.chapter][currentVerseIndex - 1]
-      : +params.chapter > 0
-      ? gitaData.verses[+params.chapter - 1][
-          gitaData.verses[+params.chapter - 1].length - 1
+      : +params.chapter > 2
+      ? gitaData.verses[(+params.chapter - 1).toString()][
+          gitaData.verses[(+params.chapter - 1).toString()].length - 1
         ]
       : null;
   const nextVerse =
@@ -193,5 +193,5 @@ export async function generateStaticParams() {
     }
   }
 
-  return params; // e.g., [{ chapter: "1", verse: "1" }, { chapter: "1", verse: "2" }, ...]
+  return params;
 }
