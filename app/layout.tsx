@@ -6,8 +6,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SSR Demo',
-  description: 'Server-side rendered Next.js application',
+  title: 'Bhagvad Gita',
+  description: 'Timeless wisdom from the sacred text',
 };
 
 export default function RootLayout({

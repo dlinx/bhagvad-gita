@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: 'Bhagavad Gita | Verses',
+  title: 'Bhagavad Gita',
   description: 'Explore the timeless wisdom of the Bhagavad Gita',
 };
 
