@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${verse.shloka_title} | Bhagavad Gita`,
-    description: verse.description,
+    description: verse.shloka,
   };
 }
 
