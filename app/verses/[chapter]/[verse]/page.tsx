@@ -59,9 +59,9 @@ export default function VersePage({ params }: Props) {
 
   const verse = gitaData.verses[params.chapter][currentVerseIndex];
   const prevVerse =
-    currentVerseIndex > 1
+    currentVerseIndex > 0
       ? gitaData.verses[params.chapter][currentVerseIndex - 1]
-      : +params.chapter > 2
+      : +params.chapter > 1
       ? gitaData.verses[(+params.chapter - 1).toString()][
           gitaData.verses[(+params.chapter - 1).toString()].length - 1
         ]
