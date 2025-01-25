@@ -13,7 +13,7 @@ export default async function sitemap({
   Object.keys(verses).forEach(c=>{
     verses[c].forEach(v=>{
         links.push({
-            url: `${BASE_URL}/verse/${c}/${v.verse}`
+            url: `${BASE_URL}/verses/${c}/${v.verse}`
         });
     })
   })
