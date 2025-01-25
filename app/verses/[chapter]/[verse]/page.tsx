@@ -41,7 +41,7 @@ export default function VersePage({ params }: Props) {
             className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to verses
+            Back to Chapters
           </Link>
 
           <div className="text-center">
@@ -97,9 +97,9 @@ export default function VersePage({ params }: Props) {
               <h2 className="text-sm font-medium text-gray-500 mb-2">
                 Sanskrit
               </h2>
-              <p className="text-xl font-serif text-gray-900 leading-relaxed whitespace-pre-line">
+              <h1 className="text-xl font-serif text-gray-900 leading-relaxed whitespace-pre-line">
                 {verse.shloka}
-              </p>
+              </h1>
             </div>
 
             <div>
