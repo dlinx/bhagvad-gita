@@ -2,6 +2,12 @@ import { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import gitaData from '../../../data/gita';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 interface Props {
   params: { chapter: string; verse: string };
@@ -101,45 +107,6 @@ export default function VersePage({ params }: Props) {
                 {verse.shloka}
               </h1>
             </div>
-
-            <div>
-              <h2 className="text-sm font-medium text-gray-500 mb-2">
-                Transliteration
-              </h2>
-              <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
-                {verse.shloka_transliteration}
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-sm font-medium text-gray-500 mb-2">
-                Word Meanings
-              </h2>
-              <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
-                {verse.Shloka_meanings}
-              </p>
-            </div>
-
-            {verse.commentary && (
-              <div>
-                <h2 className="text-sm font-medium text-gray-500 mb-2">
-                  Commentary
-                </h2>
-                <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
-                  {verse.commentary}
-                </p>
-              </div>
-            )}
-
-            <div>
-              <h2 className="text-sm font-medium text-gray-500 mb-2">
-                Detailed Explanation
-              </h2>
-              <p className="text-lg text-gray-800 leading-relaxed">
-                {verse.shloka_breakdown}
-              </p>
-            </div>
-
             <div>
               <h2 className="text-sm font-medium text-gray-500 mb-2">
                 Summary
@@ -148,6 +115,54 @@ export default function VersePage({ params }: Props) {
                 {verse.description}
               </p>
             </div>
+
+            <Accordion type="single" defaultValue="1" collapsible>
+              <AccordionItem value="transliteration">
+                <AccordionTrigger>
+                  <h2 className="text-sm font-medium text-gray-500">
+                    Transliteration
+                  </h2>
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
+                  {verse.shloka_transliteration}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="wordMeaning">
+                <AccordionTrigger>
+                  <h2 className="text-sm font-medium text-gray-500">
+                    Word Meanings
+                  </h2>
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
+                  {verse.Shloka_meanings}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="explanation">
+                <AccordionTrigger>
+                  <h2 className="text-sm font-medium text-gray-500">
+                    Detailed Explanation
+                  </h2>
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-800 leading-relaxed">
+                  {verse.shloka_breakdown}
+                </AccordionContent>
+              </AccordionItem>
+
+              {verse.commentary && (
+                <AccordionItem value="commentary">
+                  <AccordionTrigger>
+                    <h2 className="text-sm font-medium text-gray-500">
+                    Commentary
+                    </h2>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">
+                    {verse.commentary}
+                  </AccordionContent>
+                </AccordionItem>
+              )}
+            </Accordion>
           </div>
 
           <div className="mt-12 flex justify-between items-center pt-8 border-t border-orange-100">
