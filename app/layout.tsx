@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{minWidth:'100vh'}}>
         {children}
       </body>
       <GoogleAnalytics gaId="G-49C4CS2EMS" />
