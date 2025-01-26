@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google'
+import "@assistant-ui/react/styles/index.css";
+import "@assistant-ui/react/styles/modal.css"; // if using AssistantModal
 
 const inter = Inter({ subsets: ['latin'] });
 
